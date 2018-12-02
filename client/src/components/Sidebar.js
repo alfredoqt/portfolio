@@ -1,8 +1,6 @@
 import React from 'react';
 import Avatar from './Avatar';
 
-import Icon from '@mdi/react'
-import { mdiAccount, mdiFileDocumentOutline, mdiEmail, mdiNewspaper, mdiPoll } from '@mdi/js'
 import NavigationLinkList from './NavigationLinkList';
 
 function Sidebar() {
@@ -28,12 +26,13 @@ function Sidebar() {
           color: '#c7d1d8',
           marginBottom: '10px',
           textTransform: 'uppercase',
-          fontSize: '20px',
+          fontSize: '2rem',
           fontWeight: 'bold',
         }}>Alfredo Quintero</p>
         <p style={{
           color: '#c7d1d8',
           textTransform: 'uppercase',
+          fontSize: '1.4rem',
         }}>Full Stack Developer</p>
       </div>
       <NavigationLinkList />
