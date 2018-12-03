@@ -40,7 +40,7 @@ function About() {
           color: '#131313',
         }}
       >
-        I spend the last year doing projects
+        Testing webhook
       </p>
     </div>
   );
