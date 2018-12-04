@@ -9,7 +9,10 @@
   },
   "dependencies": {
     "body-parser": "^1.18.3",
+    "dotenv": "^6.1.0",
+    "ejs": "^2.6.1",
     "express": "^4.16.4",
-    "fastify-static": "^0.14.0"
+    "fastify-static": "^0.14.0",
+    "mailgun-js": "^0.22.0"
   }
 }

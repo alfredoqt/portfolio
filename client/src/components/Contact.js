@@ -1,5 +1,8 @@
 import React from 'react';
 import injectSheet from 'react-jss';
+import ButtonProgress from './lib/ButtonProgress';
+
+import { sendContact } from '../api';
 
 const styles = {
   button: {
@@ -13,13 +16,25 @@ const styles = {
     textTransform: 'uppercase',
     fontSize: '1.6rem',
     '&:hover': {
-
     },
+  },
+  inputContainer: {
+    marginBottom: '1.5rem',
+    display: 'flex',
+    flexDirection: 'column',
   },
   input: {
     width: '100%',
-    padding: '12px 10px',
+    padding: '10px 12px',
     fontSize: '1.6rem',
+    border: '.1rem solid #283e4a',
+    borderRadius: '.4rem',
+    fontFamily: 'inherit',
+  },
+  label: {
+    fontSize: '1.6rem',
+    padding: '0 0 0.8rem 0.4rem',
+    color: '#131313',
   },
 };
 
@@ -29,19 +44,30 @@ class Contact extends React.Component {
     name: '',
     email: '',
     message: '',
+    submitting: false,
+    success: false,
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
+    const { name, email, message } = this.state;
+    this.setState({ submitting: true }, async () => {
+      try {
+        await sendContact({ name, email, message });
+        this.setState({ success: true, submitting: false });
+      } catch (e) {
+        // TODO: Do something
+      }
+    });
   };
 
-  handleChange = (value) => () => {
-    this.setState({ [value]: value });
+  handleChange = (value) => (e) => {
+    this.setState({ [value]: e.target.value });
   };
 
   render() {
     const { classes } = this.props;
-    const { name, email, message } = this.state;
+    const { name, email, message, submitting, success } = this.state;
     return (
       <div
         style={{
@@ -59,8 +85,8 @@ class Contact extends React.Component {
           Contact
         </h1>
         <form onSubmit={this.handleSubmit}>
-          <div>
-            <label htmlFor="name">
+          <div className={classes.inputContainer}>
+            <label htmlFor="name" className={classes.label}>
               Name
             </label>
             <input
@@ -70,23 +96,26 @@ class Contact extends React.Component {
               value={name}
               onChange={this.handleChange('name')}
               className={classes.input}
+              required
             />
           </div>
-          <div>
-            <label htmlFor="email">
+          <div className={classes.inputContainer}>
+            <label htmlFor="email" className={classes.label}>
               Email
             </label>
             <input
+              type="email"
               id="email"
               name="email"
               placeholder="Your email..."
               value={email}
               onChange={this.handleChange('email')}
               className={classes.input}
+              required
             />
           </div>
-          <div>
-            <label htmlFor="message">
+          <div className={classes.inputContainer}>
+            <label htmlFor="message" className={classes.label}>
               Message
             </label>
             <textarea
@@ -95,11 +124,22 @@ class Contact extends React.Component {
               placeholder="Write something..."
               value={message}
               onChange={this.handleChange('message')}
+              required
+              className={classes.input}
+              rows={4}
             />
           </div>
-          <button type="submit" className={classes.button}>
+          <ButtonProgress
+            type="submit"
+            color="primary"
+            fullWidth
+            variant="contained"
+            success={success}
+            loading={submitting}
+            disabled={submitting}
+          >
             Submit
-          </button>
+          </ButtonProgress>
         </form>
       </div>
     );

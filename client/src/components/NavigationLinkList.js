@@ -31,14 +31,15 @@ class NavigationLinkList extends React.Component {
     }
 
     render() {
-        const { location } = this.props;
+        const { location, style, className: classNameProp } = this.props;
         const parentPath = location.pathname.split('/')[1];
         return (
             <div style={{
                 display: 'flex',
                 flexDirection: 'column',
                 width: '100%',
-              }}>
+                ...style,
+              }} className={classNameProp}>
                 { navigationLinks.map(el => (
                     <NavigationLink
                         name={el.name}

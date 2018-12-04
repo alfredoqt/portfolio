@@ -1,29 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Icon({
+function AlfIcon({
   size,
-  name: IconComponent,
+  name: AlfIconComponent,
   style,
   ...rest
 }) {
   return (
-    <IconComponent style={{
+    <AlfIconComponent style={{
       width: `${size * 1.5}rem`,
       ...style,
     }} {...rest} />
   )
 }
 
-Icon.propTypes = {
+AlfIcon.propTypes = {
   size: PropTypes.number,
   name: PropTypes.node.isRequired,
   style: PropTypes.object,
 };
 
-Icon.defaultProps = {
+AlfIcon.defaultProps = {
   size: 1,
   style: {},
 };
 
-export default Icon;
+export default AlfIcon;

@@ -9,10 +9,10 @@ import {
   mdiLanguageHtml5,
   mdiLanguageCss3,
 } from '@mdi/js';
-import { alfRedux, alfSocketIO, alfJavascript } from './lib/icons';
 import Icon from '@mdi/react';
+import { alfRedux, alfSocketIO, alfJavascript } from './lib/icons';
 
-import AlfIcon from './lib/Icon';
+import AlfIcon from './lib/AlfIcon';
 import rxjs from '../assets/rxjs.png';
 
 function Skills() {

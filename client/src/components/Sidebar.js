@@ -1,7 +1,8 @@
 import React from 'react';
 
-import NavigationLinkList from './NavigationLinkList';
 import Person from './Person';
+import NavigationLinkList from './NavigationLinkList';
+import SocialLinks from './SocialLinks';
 
 function Sidebar() {
   return(
@@ -15,9 +16,14 @@ function Sidebar() {
       left: 0,
       bottom: 0,
       zIndex: 2,
+      display: 'flex',
+      flexDirection: 'column',
     }}>
       <Person />
-      <NavigationLinkList />
+      <NavigationLinkList style={{
+        flex: 1,
+      }}/>
+      <SocialLinks />
     </aside>
   );
 }

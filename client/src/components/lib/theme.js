@@ -1,3 +1,5 @@
+import * as colors from './colors';
+
 const easing = {
     // This is the most common easing curve.
     easeInOut: 'cubic-bezier(0.4, 0, 0.2, 1)',
@@ -25,62 +27,6 @@ const duration = {
 };
 
 export default {
-    colors: {
-        // transparent
-        transparent: 'rgba(0, 0, 0, 0)',
-        hovertrans: 'rgba(0, 0, 0, 0.2)',
-        // background current registration
-        currentRegistration: '#edeaea',
-        // light shades
-        white: '#FFFFFF',
-        snow: '#F9FAFC',
-        darkSnow: '#EFF2F7',
-        extraDarkSnow: '#E5E9F2',
-        // dark tones
-        silver: '#8492A6',
-        slate: '#3C4858',
-        steel: '#273444',
-        black: '#1F2D3D',
-        // dark shades
-        smoke: '#E0E6ED',
-        darkSmoke: '#D3DCE6',
-        extraDarkSmoke: '#C0CCDA',
-        // red shades
-        lightRed: '#db5555',
-        red: '#db2b2b',
-        // blue shades
-        lightBlue: '#85D7FF',
-        blue: '#1FB6FF',
-        darkBlue: '#009EEB',
-        // purple shades
-        lightPurple: '#A389F4',
-        purple: '#7E5BEF',
-        darkPurple: '#592DEA',
-        // pink shades
-        lightPink: '#FF7CE5',
-        pink: '#FF49DB',
-        darkPink: '#FF16D1',
-        // orange shades
-        lightOrange: '#FF9E7C',
-        orange: '#F17423',
-        darkOrange: '#FF5216',
-        // green shades
-        lightGreen: '#15e0f2',
-        green: '#13A5B2',
-        darkGreen: '#067a84',
-        // yellow shades
-        lightYellow: '#FFD55F',
-        yellow: '#FFC82C',
-        darkYellow: '#F8B700',
-        // text color
-        textNormal: '#6E6E6E',
-        textTitle: '#4A4A4A',
-        // ui colors
-        info: '#1FB6FF',
-        success: '#13CE66',
-        danger: '#FF4949',
-        warning: '#FFC82C',
-    },
     typography: {
         fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
         title: {
@@ -134,9 +80,20 @@ export default {
             // Text hints.
             hint: 'rgba(0, 0, 0, 0.38)',
         },
+        primary: {
+            main: '#283e4a',
+            dark: '#1d2f3a',
+            contrastText: 'white',
+        },
+        secondary: {
+            main: 'green',
+            dark: 'red',
+            contrastText: 'white',
+        },
         background: {
             paper: '#fff',
         },
+        ...colors,
     },
     shape: {
         borderRadius: 4,
