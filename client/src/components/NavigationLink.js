@@ -51,7 +51,8 @@ function NavigationLink({
               color="inherit"
               style={{
                 margin: '0 15px',
-              }}/>
+              }}
+            />
             <span
               style={{
                 fontSize: '1.6rem',

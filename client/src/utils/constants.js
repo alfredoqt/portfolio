@@ -1,4 +1,4 @@
-import { mdiAccount, mdiFileDocumentOutline, mdiEmail, mdiNewspaper, mdiPoll } from '@mdi/js'
+import { mdiAccount, mdiFileDocumentOutline, mdiEmail, mdiNewspaper, mdiPoll } from '@mdi/js';
 
 export const navigationLinks = [
     { name: 'about', icon: mdiAccount, id: '32432sfadsad32' },

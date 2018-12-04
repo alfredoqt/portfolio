@@ -4,9 +4,9 @@ const setup = require('./rest_api_routes/setup');
 
 const app = express();
 
-app.use('/', express.static('build'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('build'));
 
 setup(app);
 
