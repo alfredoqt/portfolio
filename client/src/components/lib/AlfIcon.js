@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function AlfIcon({
   size,
-  name: AlfIconComponent,
+  path: AlfIconComponent,
   style,
   ...rest
 }) {
@@ -17,7 +17,7 @@ function AlfIcon({
 
 AlfIcon.propTypes = {
   size: PropTypes.number,
-  name: PropTypes.node.isRequired,
+  path: PropTypes.any.isRequired,
   style: PropTypes.object,
 };
 

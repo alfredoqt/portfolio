@@ -28,7 +28,6 @@ const styles = {
     padding: '10px 12px',
     fontSize: '1.6rem',
     border: '.1rem solid #283e4a',
-    borderRadius: '.4rem',
     fontFamily: 'inherit',
   },
   label: {

@@ -19,7 +19,7 @@ class NavigationLinkList extends React.Component {
             return;
         }
 
-        history.push(route);
+        history.push(`/${route}`);
     }
 
     shouldComponentUpdate(nextProps) {

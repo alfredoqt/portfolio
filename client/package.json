@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "proxy": "http://localhost:4001/",
+  "proxy": "http://localhost:4001",
   "private": true,
   "dependencies": {
     "@mdi/js": "^3.2.89",

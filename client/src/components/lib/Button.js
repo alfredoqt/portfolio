@@ -6,6 +6,7 @@ import injectSheet from 'react-jss';
 import ButtonBase from './ButtonBase';
 import theme from './theme';
 import { capitalize } from '../../utils/helpers';
+import { fade } from '../../utils/colorManipulator';
 
 export const styles = {
     /* Styles applied to the root element. */
@@ -15,7 +16,6 @@ export const styles = {
         minWidth: 64,
         minHeight: 36,
         padding: '8px 16px',
-        borderRadius: theme.shape.borderRadius,
         color: theme.palette.text.primary,
         transition: theme.transitions.create(['background-color', 'box-shadow', 'border'], {
             duration: theme.transitions.duration.short,
@@ -64,6 +64,44 @@ export const styles = {
             },
         },
     },
+    /* Styles applied to the root element if `variant="outlined"`. */
+  outlined: {
+    border: `1px solid ${
+      theme.palette.type === 'light' ? 'rgba(0, 0, 0, 0.23)' : 'rgba(255, 255, 255, 0.23)'
+    }`,
+  },
+  /* Styles applied to the root element if `variant="outlined"` and `color="primary"`. */
+  outlinedPrimary: {
+    color: theme.palette.primary.main,
+    border: `1px solid ${fade(theme.palette.primary.main, 0.5)}`,
+    '&:hover': {
+      border: `1px solid ${theme.palette.primary.main}`,
+      backgroundColor: fade(theme.palette.primary.main, theme.palette.action.hoverOpacity),
+      // Reset on touch devices, it doesn't add specificity
+      '@media (hover: none)': {
+        backgroundColor: 'transparent',
+      },
+    },
+    '&$disabled': {
+      border: `1px solid ${theme.palette.action.disabled}`,
+    },
+  },
+  /* Styles applied to the root element if `variant="outlined"` and `color="secondary"`. */
+  outlinedSecondary: {
+    color: theme.palette.secondary.main,
+    border: `1px solid ${fade(theme.palette.secondary.main, 0.5)}`,
+    '&:hover': {
+      border: `1px solid ${theme.palette.secondary.main}`,
+      backgroundColor: fade(theme.palette.secondary.main, theme.palette.action.hoverOpacity),
+      // Reset on touch devices, it doesn't add specificity
+      '@media (hover: none)': {
+        backgroundColor: 'transparent',
+      },
+    },
+    '&$disabled': {
+      border: `1px solid ${theme.palette.action.disabled}`,
+    },
+  },
     contained: {
         backgroundColor: theme.palette.grey[300],
         '&$disabled': {
@@ -112,7 +150,8 @@ export const styles = {
         padding: '7px 8px',
         minWidth: 64,
         minHeight: 32,
-        fontSize: '13px',
+        fontSize: '1rem',
+        textTransform: 'none',
     },
     /* Styles applied to the root element if `size="large"`. */
     sizeLarge: {
@@ -154,6 +193,9 @@ class Button extends React.PureComponent {
               [classes.contained]: contained || fab,
               [classes.containedPrimary]: (contained || fab) && color === 'primary',
               [classes.containedSecondary]: (contained || fab) && color === 'secondary',
+              [classes.outlined]: variant === 'outlined',
+              [classes.outlinedPrimary]: variant === 'outlined' && color === 'primary',
+              [classes.outlinedSecondary]: variant === 'outlined' && color === 'secondary',
               [classes[`size${capitalize(size)}`]]: size !== 'medium',
               [classes.disabled]: disabled,
               [classes.fullWidth]: fullWidth,
@@ -191,7 +233,7 @@ Button.propTypes = {
    * @ignore
    */
     type: PropTypes.string,
-    variant: PropTypes.oneOf(['text', 'contained']),
+    variant: PropTypes.oneOf(['text', 'contained', 'outlined']),
 };
 
 Button.defaultProps = {

@@ -7,6 +7,7 @@ import AboutScreen from '../screens/AboutScreen';
 import SkillsScreen from '../screens/SkillsScreen';
 import ProjectsScreen from '../screens/ProjectsScreen';
 import ContactScreen from '../screens/ContactScreen';
+import ProjectDetailsScreen from '../screens/ProjectDetailsScreen';
 
 class App extends Component {
   render() {
@@ -14,10 +15,11 @@ class App extends Component {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={WelcomeScreen} />
-          <Route path="/about" component={AboutScreen} />
-          <Route path="/skills" component={SkillsScreen} />
-          <Route path="/projects" component={ProjectsScreen} />
-          <Route path="/contact" component={ContactScreen} />
+          <Route exact path="/about" component={AboutScreen} />
+          <Route exact path="/skills" component={SkillsScreen} />
+          <Route exact path="/projects" component={ProjectsScreen} />
+          <Route exact path="/projects/:id" component={ProjectDetailsScreen} />
+          <Route exact path="/contact" component={ContactScreen} />
         </Switch>
       </BrowserRouter>
     );

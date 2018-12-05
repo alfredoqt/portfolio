@@ -69,6 +69,7 @@ export default {
         action: {
             disabled: "rgba(0, 0, 0, 0.26)",
             disabledBackground: 'rgba(0, 0, 0, 0.12)',
+            hoverOpacity: 0.08,
         },
         text: {
             // The most important text.
@@ -86,13 +87,14 @@ export default {
             contrastText: 'white',
         },
         secondary: {
-            main: 'green',
-            dark: 'red',
+            main: '#283e4a',
+            dark: '#1d2f3a',
             contrastText: 'white',
         },
         background: {
             paper: '#fff',
         },
+        type: 'light',
         ...colors,
     },
     shape: {

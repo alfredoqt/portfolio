@@ -3,12 +3,14 @@ const bodyParser = require('body-parser');
 const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '.env') });
 const setup = require('./rest_api_routes/setup');
-
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('build'));
+app.use(express.static(__dirname + '/build'));
+app.get('*', function (request, response) {
+  response.sendFile(path.resolve(__dirname, 'build', 'index.html'))
+});
 
 setup(app);
 

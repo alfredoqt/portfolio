@@ -1,19 +1,11 @@
 import React from 'react';
+import TechnologyLink from './TechnologyLink';
+
+import Icon from '@mdi/react';
 import {
   mdiIframeOutline,
-  mdiJson,
-  mdiReact,
-  mdiNodejs,
-  mdiDatabase,
-  mdiGit,
-  mdiLanguageHtml5,
-  mdiLanguageCss3,
+  mdiJson
 } from '@mdi/js';
-import Icon from '@mdi/react';
-import { alfRedux, alfSocketIO, alfJavascript } from './lib/icons';
-
-import AlfIcon from './lib/AlfIcon';
-import rxjs from '../assets/rxjs.png';
 
 function Skills() {
   return (
@@ -46,248 +38,50 @@ function Skills() {
           flexWrap: 'wrap',
           width: '50%',
         }}>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              margin: '.8rem',
-            }}
-          >
-            <AlfIcon
-              name={alfJavascript}
-              size={2.6}
-              style={{
-                marginBottom: '.4rem',
-              }}
-            />
-            <span
-              style={{
-                padding: '.6rem 1.2rem',
-                backgroundColor: '#283e4a',
-                fontSize: '1.2rem',
-                color: 'white'
-              }}
-            >Javascript</span>
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              margin: '.8rem',
-            }}
-          >
-            <Icon
-              path={mdiLanguageHtml5}
-              color="#f1502f"
-              size={2.6}
-              style={{
-                marginBottom: '.4rem',
-              }}
-            />
-            <span
-              style={{
-                padding: '.6rem 1.2rem',
-                backgroundColor: '#283e4a',
-                fontSize: '1.2rem',
-                color: 'white'
-              }}
-            >HTML</span>
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              margin: '.8rem',
-            }}
-          >
-            <Icon
-              path={mdiLanguageCss3}
-              color="#1572b6"
-              size={2.6}
-              style={{
-                marginBottom: '.4rem',
-              }}
-            />
-            <span
-              style={{
-                padding: '.6rem 1.2rem',
-                backgroundColor: '#283e4a',
-                fontSize: '1.2rem',
-                color: 'white'
-              }}
-            >CSS</span>
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              margin: '.8rem',
-            }}
-          >
-            <Icon
-              path={mdiReact}
-              color="#61DBFB"
-              size={2.6}
-              style={{
-                marginBottom: '.4rem',
-              }}
-            />
-            <span
-              style={{
-                padding: '.6rem 1.2rem',
-                backgroundColor: '#283e4a',
-                fontSize: '1.2rem',
-                color: 'white'
-              }}
-            >React</span>
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              margin: '.8rem',
-            }}
-          >
-            <AlfIcon
-              name={alfRedux}
-              size={2.6}
-              style={{
-                marginBottom: '.4rem',
-              }}
-            />
-            <span
-              style={{
-                padding: '.6rem 1.2rem',
-                backgroundColor: '#283e4a',
-                fontSize: '1.2rem',
-                color: 'white'
-              }}
-            >Redux</span>
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              margin: '.8rem',
-            }}
-          >
-            <img src={rxjs} alt="RxJS" style={{
-              marginBottom: '.4rem',
-            }} />
-            <span
-              style={{
-                padding: '.6rem 1.2rem',
-                backgroundColor: '#283e4a',
-                fontSize: '1.2rem',
-                color: 'white'
-              }}
-            >RxJS</span>
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              margin: '.8rem',
-            }}
-          >
-            <AlfIcon
-              name={alfSocketIO}
-              size={2.6}
-              style={{
-                marginBottom: '.4rem',
-              }}
-            />
-            <span
-              style={{
-                padding: '.6rem 1.2rem',
-                backgroundColor: '#283e4a',
-                fontSize: '1.2rem',
-                color: 'white'
-              }}
-            >Socket.IO</span>
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              margin: '.8rem',
-            }}
-          >
-            <Icon
-              path={mdiNodejs}
-              color="#539E43"
-              size={2.6}
-              style={{
-                marginBottom: '.4rem',
-              }}
-            />
-            <span
-              style={{
-                padding: '.6rem 1.2rem',
-                backgroundColor: '#283e4a',
-                fontSize: '1.2rem',
-                color: 'white'
-              }}
-            >Node.js</span>
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              margin: '.8rem',
-            }}
-          >
-            <Icon
-              path={mdiDatabase}
-              color="#599735"
-              size={2.6}
-              style={{
-                marginBottom: '.4rem',
-              }}
-            />
-            <span
-              style={{
-                padding: '.6rem 1.2rem',
-                backgroundColor: '#283e4a',
-                fontSize: '1.2rem',
-                color: 'white'
-              }}
-            >MongoDB</span>
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              margin: '.8rem',
-            }}
-          >
-            <Icon
-              path={mdiGit}
-              color="#f1502f"
-              size={2.6}
-              style={{
-                marginBottom: '.4rem',
-              }}
-            />
-            <span
-              style={{
-                padding: '.6rem 1.2rem',
-                backgroundColor: '#283e4a',
-                fontSize: '1.2rem',
-                color: 'white'
-              }}
-            >Git</span>
-          </div>
+          <TechnologyLink
+            name="js"
+            icon
+          />
+          <TechnologyLink
+            name="cpp"
+            icon
+          />
+          <TechnologyLink
+            name="html"
+            icon
+          />
+          <TechnologyLink
+            name="css"
+            icon
+          />
+          <TechnologyLink
+            name="react"
+            icon
+          />
+          <TechnologyLink
+            name="redux"
+            icon
+          />
+          <TechnologyLink
+            name="rxjs"
+            icon
+          />
+          <TechnologyLink
+            name="socket-io"
+            icon
+          />
+          <TechnologyLink
+            name="node"
+            icon
+          />
+          <TechnologyLink
+            name="mongo"
+            icon
+          />
+          <TechnologyLink
+            name="git"
+            icon
+          />
         </div>
       </div>
       <p
@@ -379,6 +173,7 @@ function Skills() {
         style={{
           listStyleType: 'circle',
           paddingLeft: '4rem',
+          marginBottom: '1rem',
         }}
       >
         <li
@@ -479,6 +274,7 @@ function Skills() {
         style={{
           listStyleType: 'circle',
           paddingLeft: '4rem',
+          marginBottom: '1rem',
         }}
       >
         <li
@@ -517,6 +313,15 @@ function Skills() {
             marginBottom: '.4rem',
           }}
         >Refactoring of applications into microservices to decouple database access.</li>
+        <li
+          style={{
+            fontSize: '1.6rem',
+            lineHeight: 1.6,
+            fontWeight: 300,
+            color: '#131313',
+            marginBottom: '.4rem',
+          }}
+        >Deployment of secure websites using Let's Encrypt and deployment of subdomains.</li>
       </ul>
     </div>
   );
