@@ -517,6 +517,7 @@ function Projects({ classes, history }) {
                 Stack:
               </span>
               <TechnologyLink name="react" />
+              <TechnologyLink name="redux" />
               <TechnologyLink name="howler" />
               <TechnologyLink name="firebase" />
             </div>

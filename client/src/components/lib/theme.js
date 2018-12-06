@@ -1,4 +1,5 @@
 import * as colors from './colors';
+import createBreakpoints from './styles/createBreakpoints';
 
 const easing = {
     // This is the most common easing curve.
@@ -27,6 +28,7 @@ const duration = {
 };
 
 export default {
+    breakpoints: createBreakpoints({}),
     typography: {
         fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
         title: {
