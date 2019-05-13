@@ -1,22 +1,18 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const path = require('path');
-require('dotenv').config({ path: path.join(__dirname, '.env') });
-const setup = require('./rest_api_routes/setup');
+const express = require("express");
+const bodyParser = require("body-parser");
+const path = require("path");
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname + '/build'));
-app.get('*', function (request, response) {
-  response.sendFile(path.resolve(__dirname, 'build', 'index.html'))
+app.use(express.static(__dirname + "/build"));
+app.get("*", function(request, response) {
+  response.sendFile(path.resolve(__dirname, "build", "index.html"));
 });
-
-setup(app);
 
 app.use((err, req, res, next) => {
   if (err instanceof Error) {
-      return res.status(err.status || 500).send({ message: err.message });
+    return res.status(err.status || 500).send({ message: err.message });
   }
   next(err);
 });
