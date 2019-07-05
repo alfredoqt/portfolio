@@ -5,7 +5,9 @@
   "license": "MIT",
   "scripts": {
     "build": "rm -rf build && cd ../client && yarn build && mv -f build ../server && rm -rf build",
-    "start": "node index.js"
+    "start": "node index.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -14,6 +16,8 @@
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "fastify-static": "^0.14.0",
-    "mailgun-js": "^0.22.0"
-  }
+    "mailgun-js": "^0.22.0",
+    "snyk": "^1.192.0"
+  },
+  "snyk": true
 }
