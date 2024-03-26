@@ -12,7 +12,7 @@
     "cors": "^2.8.5",
     "dotenv": "^6.1.0",
     "ejs": "^2.6.1",
-    "express": "^4.16.4",
+    "express": "^4.19.2",
     "fastify-static": "^0.14.0",
     "mailgun-js": "^0.22.0"
   }
